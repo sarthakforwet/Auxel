@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  // Function to call the API
+  function callAPI() {
+    // Replace the URL with your actual API endpoint
+    const url = 'http://127.0.0.1:5000/listen';
+
+    // Replace the requestPayload with the data you want to send in the request body
+    const requestPayload = {
+      key1: 'value1',
+      key2: 'value2'
+    };
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestPayload)
+    })
+      .then(response => response.json())
+      .then(data => {
+        const textLabel = document.getElementById('text-label');
+        textLabel.textContent = data.text;
+      })
+      .catch(error => {
+        // Handle any errors that occur during the API call
+        console.error('Error:', error);
+      });
+  }
+
+  // Event listener for key press
+  document.addEventListener('keydown', function(event) {
+    // Replace 'Enter' with the desired key you want to trigger the API call
+    if (event.key === 'Enter') {
+      callAPI(); // Call the API function
+    }
+  });
+
+
+
+  </script>
+</head>
+<body>
+    <h1>Speech Recognition Demo</h1>
+    <p id="inp" onkeypress="handle(event)"></p>
+    <p id="text-label">Prompt>> {{ text }}</p>
+</body>
+</html>
+
+<!--
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function listenForInput() {
+                $.ajax({
+                    type: 'POST',
+                    url: '/listen',
+                    success: function(response) {
+                        var text = response.text;
+                        // Update the page with the recognized text
+                        $('#output').text(text);
+                        // Call the listenForInput function again after a delay
+                        setTimeout(listenForInput, 1000);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+
+            // Start listening for input when the page loads
+            listenForInput()
+        });
+    </script>
+-->
