@@ -1,7 +1,6 @@
 # Speech Recoginition libraries
 import speech_recognition as sr
 import pyttsx3
-import pyaudio
 from io import StringIO
 
 
