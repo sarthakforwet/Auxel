@@ -192,7 +192,7 @@ def main() -> None:
     )
 
     streaming_config = speech.StreamingRecognitionConfig(
-        config=config, interim_results=True
+        config=config, single_utterance=False
     )
 
     with MicrophoneStream(RATE, CHUNK) as stream:

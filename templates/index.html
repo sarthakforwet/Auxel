@@ -21,10 +21,11 @@
             },
             body: JSON.stringify(requestPayload)
           })
-            .then(response => console.log('ehy'))
+            //.then(response => response)
             .then(data => {
               const textLabel = document.getElementById('text-label');
               textLabel.textContent = data.text;
+              console.log(data.text);
             })
             .catch(error => {
               // Handle any errors that occur during the API call
@@ -51,6 +52,6 @@
         <input type="file" name="audio" accept="audio/*">
         <input type="submit" value="Submit">
     </form>-->
-    <h3> Press Enter </h3>
+    <h3 id="text-label"> Press Enter </h3>
 </body>
 </html>
