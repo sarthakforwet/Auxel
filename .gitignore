@@ -1,5 +1,0 @@
-*.pdf
-*.csv 
-*.excel
-__pycache*
-env/
