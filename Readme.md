@@ -33,7 +33,31 @@ Following is the pricing distribution -
 | Text-Davinci | 0.015               | 0.02                  | Work with SQL Queries|
 
 
+# Creating a release
+
+In order to publish your release, you should be aware of any changes that has been done with the UI. In sum, if MainWindow.ui file is changed,
+you would first need to convert this file into its python equivalent and adjust changes accordingly. This can be achieved using the 
+following command.
+```{bash}
+pyuic5 mainwindow.ui -o mainwindow.py
+```
+
+After this, we are ready to build the executable version of the application. This is achieved using the following command if you have 
+the specifications file - 
+```{bash}
+pyinstaller app.spec
+```
+
+However, if you do not have the file, one can be generated and an executable can be created at the same time using the following command - 
+```{bash}
+pyinstaller --windowed mainwindow.py
+```
+
+As soon as we have finished with the above step, we would move on the create a setup for this application. This would be done via Installforge. For details follow the tutorial in [3].
+
+
 # References
 
 1. https://www.pinecone.io/learn/series/langchain/langchain-intro/
 2. https://www.youtube.com/watch?v=w-eTS8YlbZ4&t=302s
+3. https://www.pythonguis.com/tutorials/packaging-pyqt5-pyside2-applications-windows-pyinstaller/
