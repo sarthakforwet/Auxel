@@ -105,9 +105,7 @@ class MicrophoneStream:
                     # print("inside small loop")
                     chunk = self._buff.get(block=False)
                     if chunk is None:
-                        print('data loop',data)
                         return
-                    print('data',data)
                     data.append(chunk)
                     
                 except queue.Empty:
