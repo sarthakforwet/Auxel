@@ -55,9 +55,15 @@ pyinstaller --windowed mainwindow.py
 
 As soon as we have finished with the above step, we would move on the create a setup for this application. This would be done via Installforge. For details follow the tutorial in [3].
 
+# Debug
+Whenever you want to debug the application, even in the cases where error message is not evident, just run the application without using the --windowed or -w tag.
+
+# Issues with LangChain
+If you encounter any issue with LangChain installation by pyinstaller, just copy paste the pip installed version of langchain to your dist folder and all dependencies for langchain would be resolved.
 
 # References
 
 1. https://www.pinecone.io/learn/series/langchain/langchain-intro/
 2. https://www.youtube.com/watch?v=w-eTS8YlbZ4&t=302s
 3. https://www.pythonguis.com/tutorials/packaging-pyqt5-pyside2-applications-windows-pyinstaller/
+4. https://pyinstaller.org/en/stable/usage.html#building-macos-app-bundles
