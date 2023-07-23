@@ -47,7 +47,8 @@ class ChatApp:
     def __init__(self):
         # Setting the API key to use the OpenAI API
         # openai.api_key = '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'
-        os.environ['OPENAI_API_KEY'] = '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'
+        #os.environ['OPENAI_API_KEY'] = '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'
+        self.openai_key = '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'
 
         # Initializing the chatbot.
         self.messages = [
@@ -57,7 +58,7 @@ class ChatApp:
 
         input_db = SQLDatabase.from_uri('sqlite:///auxel_db.sqlite3')
 
-        llm_1 = OpenAI(temperature=0)
+        llm_1 = OpenAI(openai_api_key=self.openai_key, temperature=0)
 
         self.db_agent = SQLDatabaseChain(llm=llm_1,
                                     database=input_db,

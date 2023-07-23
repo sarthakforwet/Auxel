@@ -11,6 +11,8 @@ from multiprocessing import Process
 # Utility Script
 from auxel_app import Auxel
 
+import langchain
+
 # Threading Class
 class Worker(QRunnable):
     
