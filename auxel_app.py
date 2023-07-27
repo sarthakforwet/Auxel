@@ -48,7 +48,7 @@ class ChatApp:
         # Setting the API key to use the OpenAI API
         # openai.api_key = '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'
         #os.environ['OPENAI_API_KEY'] = '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'
-        self.openai_key = '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'
+        self.openai_key = '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'
 
         # Initializing the chatbot.
         self.messages = [
